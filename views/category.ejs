@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu</title>
+    <title><%= category.charAt(0).toUpperCase()+ category.slice(1) %></title>
   </head>
   <body>
     <%- include('./partials/nav.ejs') %>
     <h1><%= category.charAt(0).toUpperCase()+ category.slice(1) %></h1>
 
     <% menuItems.forEach((item) =>{ %>
-    <p><b><%= item.name %></b></p>
+    <p><b><%= item.name %></b> <%if (item.rating === 5) { %> "⭐" <% } %></p>
     Price: <%= item.price %> Rating: <%= item.rating %>
     <br />Details: <%= item.details %> <% }) %>
     <br />

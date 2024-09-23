@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu</title>
+    <title>Full Menu</title>
   </head>
   <body>
     <%- include('./partials/nav.ejs') %>
@@ -11,7 +11,9 @@
     <h2>Mains</h2>
     <% menu.forEach((item, index) =>{ %> <% if (item.category === 'mains') { %>
     <ul>
-      <li><b><%= item.name %></b></li>
+      <li>
+        <b><%= item.name %></b> <%if (item.rating === 5) { %> "⭐" <% } %>
+      </li>
       Price: <%= item.price %> Rating: <%= item.rating %>
       <br />Details: <%= item.details %>
     </ul>
@@ -20,7 +22,9 @@
     <% menu.forEach((item, index) =>{ %> <% if (item.category === 'desserts') {
     %>
     <ul>
-      <li><b><%= item.name %></b></li>
+      <li>
+        <b><%= item.name %></b> <%if (item.rating === 5) { %> "⭐" <% } %>
+      </li>
       Price: <%= item.price %> Rating: <%= item.rating %>
       <br />Details: <%= item.details %>
     </ul>
@@ -28,7 +32,9 @@
     <h2>Sides</h2>
     <% menu.forEach((item, index) =>{ %> <% if (item.category === 'sides') { %>
     <ul>
-      <li><b><%= item.name %></b></li>
+      <li>
+        <b><%= item.name %></b> <%if (item.rating === 5) { %> "⭐" <% } %>
+      </li>
       Price: <%= item.price %> Rating: <%= item.rating %>
       <br />Details: <%= item.details %>
     </ul>
